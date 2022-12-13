@@ -1,6 +1,6 @@
-# PyDF Metadata Extractor
+# Python PDF Metadata Extractor
 
-
+Uses pikepdf to scan for PDF Metadata and outputs results to file
 
 ## Usage
 
