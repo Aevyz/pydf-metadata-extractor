@@ -10,10 +10,6 @@ args = parser.parse_args()
 
 files = []
 
-# Inspired by https://stackoverflow.com/a/120948
-def lsdir_full(dir):
-    return [os.path.join(dir, f) for f in os.listdir(dir)]
-
 
 if not os.path.exists(args.input):
     print('Exiting: Input Dir not Found')
@@ -32,7 +28,7 @@ if args.output is not None:
 if os.path.isfile(args.input):
     files = [args.input]
 else: 
-    files = lsdir_full(args.input)
+    files = [os.path.join(args.input, f) for f in os.listdir(args.input)]
 
 if len(files) == 0:
     print("No files found in folder")
